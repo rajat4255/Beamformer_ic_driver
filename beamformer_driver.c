@@ -9,20 +9,21 @@ struct bf_channel_cfg {
     int phase_deg;
 };
 
-/* Dynamic allocation */
-static struct bf_channel_cfg *bf_channels;  /* Pointer of Beamformer data structure */
+ /* Pointer of Beamformer data structure */
+static struct bf_channel_cfg *bf_channels; 
 
 /* Mutex for synchronization */
 static pthread_mutex_t bf_lock;   
 
-/* ---------------- SPI PLACEHOLDER ---------------- */
+/* ---------SPI PLACEHOLDER ------------- */
 static int spi_write_reg(int reg, int value)
 {
     printf("[SPI] WRITE reg=0x%X value=%d\n", reg, value);
     return 0;
 }
 
-/* ---------------- DRIVER INIT ---------------- */
+//      Driver init
+  
 int bf_init(void)
 {
     int i;
@@ -52,7 +53,8 @@ int bf_init(void)
     return 0;
 }
 
-/* ---------------- SET PHASE ---------------- */
+//        Set Phase
+
 int bf_set_phase(int channel, int degree)
 {
     if (channel < 0 || channel >= BF_MAX_CHANNELS)
@@ -72,7 +74,8 @@ int bf_set_phase(int channel, int degree)
     return 0;
 }
 
-/* ---------------- SET GAIN ---------------- */
+//            Set gain
+
 int bf_set_gain(int channel, int gain_db)
 {
     if (channel < 0 || channel >= BF_MAX_CHANNELS)
@@ -89,7 +92,8 @@ int bf_set_gain(int channel, int gain_db)
     return 0;
 }
 
-/* ---------------- BEAM ANGLE ---------------- */
+//               Beam angle
+
 int bf_set_beam_angle(int angle_degree)
 {
     int ch;
@@ -110,11 +114,12 @@ int bf_set_beam_angle(int angle_degree)
     return 0;
 }
 
-/* ---------------- DEINIT ---------------- */
+//          Deinit
+
 int bf_deinit(void)
 {
     pthread_mutex_destroy(&bf_lock);
-
+    
     free(bf_channels);
     bf_channels = NULL;
 
