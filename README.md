@@ -1,7 +1,7 @@
 # Beamformer_ic_driver
  ADAR1000 Ic Dummy linux driver code
 
-#IC Selected
+# IC Selected
  ADAR1000 – Analog Devices Beamformer IC
 
 # Driver Overview
