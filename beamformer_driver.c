@@ -93,7 +93,9 @@ int bf_set_gain(int channel, int gain_db)
 }
 
 //               Beam angle
-
+/*   Simple Beamforming logic
+    * Phase shift = channel index * angle(degree)
+*/
 int bf_set_beam_angle(int angle_degree)
 {
     int ch;
