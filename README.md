@@ -1,10 +1,10 @@
 # Beamformer_ic_driver
-ADAR1000 Ic Dummy linux driver code
+ ADAR1000 Ic Dummy linux driver code
 
 #IC Selected
-ADAR1000 – Analog Devices Beamformer IC
+ ADAR1000 – Analog Devices Beamformer IC
 
-#Driver Overview
+# Driver Overview
 This project implements a simplified firmware-style Linux driver
 demonstrating beamformer control logic without real hardware access.
 
@@ -22,3 +22,4 @@ A minimal SPI device node is provided for integration reference.
 
 # User-Space Tool
 `beamctl is a CLI application that directly calls driver APIs,
+ By commands we can set per channel phase gain and beam angle from user space.
