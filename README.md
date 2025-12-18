@@ -14,6 +14,9 @@ demonstrating beamformer control logic without real hardware access.
 - Clear init/deinit lifecycle
 - Dynamic allocation used per-channel configuration storage
 
+# Beam angle setting logic
+ -Phase shift(channel) = channel index * angle(degree)
+
 # Device Tree
 A minimal SPI device node is provided for integration reference.
 - Spi0 controller used to communicate with ic.
