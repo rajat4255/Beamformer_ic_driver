@@ -1,1 +1,15 @@
 
+&spi0 {
+    //Enable spi controller 0 enable
+    status = "okay"; 
+
+    beamformer0: adar1000@0 {
+        // Compatible string used by Linux to match the driver
+        compatible = "adi,adar1000";
+       // SPI chip-select number (CS0)
+        reg = <0>;
+        // Maximum SPI clock frequency in Hz (1 MHz)
+        spi-max-frequency = <1000000>;
+    };
+};
+
